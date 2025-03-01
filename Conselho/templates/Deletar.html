@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h1>Deletar Conselho</h1>
+        <form {% url 'Conselho:Deletar' %} method="post">
+            {% csrf_token %}
+            {{ field_label_tag }}
+            <br>
+            {{ field }}
+            <br>
+            <p>Tem certeza que deseja deletar o conselho "{{ object.nome }}"?</p>
+            <button type="submit" class="btn btn-danger">Deletar</button>
+        </form>
+    </div>
+</body>
+</html>

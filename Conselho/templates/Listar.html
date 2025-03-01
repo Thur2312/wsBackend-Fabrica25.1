@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Conselhos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Listar Conselhos</h1>
+        <form action="{% url 'Conselho:Listar' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Filtrar</button>
+        <ul>
+            {% for conselho in object_list %}
+                <li>{{ conselho.nome }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
